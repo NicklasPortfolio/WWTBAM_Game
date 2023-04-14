@@ -45,7 +45,7 @@ namespace WhoWantsToBeAMillionaire
                 Question selectedQuestion;
                 do
                 {
-                    randomIndex = rand.Next(0, questions.Count + 1);
+                    randomIndex = rand.Next(0, questions.Count);
                     selectedQuestion = questions[randomIndex];
                 }
                 while (usedQuestions.Contains(selectedQuestion.questionIndex));
