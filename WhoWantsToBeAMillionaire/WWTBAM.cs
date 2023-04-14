@@ -50,6 +50,7 @@ namespace WhoWantsToBeAMillionaire
                 }
                 while (usedQuestions.Contains(selectedQuestion.questionIndex));
 
+                usedQuestions.Add(selectedQuestion.questionIndex);
                 return selectedQuestion;
             }
             
@@ -74,6 +75,12 @@ namespace WhoWantsToBeAMillionaire
                 generatedNumbers.Add(randomNumber); 
                 buttons[randomNumber].Text = question.options[i];
             }
+        }
+
+        private void NextLabel()
+        {
+            labels[questionCounter - 2].Text = labels[questionCounter - 2].Text.Trim(new char[] { '<' });
+            labels[questionCounter - 1].Text += " <";
         }
         public WWTBAM()
         {
@@ -111,7 +118,7 @@ namespace WhoWantsToBeAMillionaire
         {
             XMLEditor program = new XMLEditor();
             program.SetItems();
-            ChangeButtons(GetItems(2));
+            ChangeButtons(GetItems(1));
         }
 
         private void AnsClicked(object sender, MouseEventArgs e)
@@ -132,7 +139,9 @@ namespace WhoWantsToBeAMillionaire
                 question = GetItems(3);
             }
 
+            questionCounter++;
             ChangeButtons(question);
+            NextLabel();
         }
 
         private void timerTime_Tick(object sender, EventArgs e)
