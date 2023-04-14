@@ -121,7 +121,7 @@ namespace WhoWantsToBeAMillionaire
             ChangeButtons(GetItems(1));
         }
 
-        private void AnsClicked(object sender, MouseEventArgs e)
+        private void AnsButtonClicked(object sender, MouseEventArgs e)
         {
             Button button = sender as Button;
             Question question;

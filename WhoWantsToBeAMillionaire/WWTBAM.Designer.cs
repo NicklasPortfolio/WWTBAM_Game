@@ -359,7 +359,7 @@ namespace WhoWantsToBeAMillionaire
             this.btnAns3.Size = new System.Drawing.Size(210, 30);
             this.btnAns3.TabIndex = 23;
             this.btnAns3.UseVisualStyleBackColor = false;
-            this.btnAns3.MouseClick += new System.Windows.Forms.MouseEventHandler(this.AnsClicked);
+            this.btnAns3.MouseClick += new System.Windows.Forms.MouseEventHandler(this.AnsButtonClicked);
             // 
             // lblQst
             // 
@@ -391,7 +391,7 @@ namespace WhoWantsToBeAMillionaire
             this.btnAns4.Size = new System.Drawing.Size(210, 30);
             this.btnAns4.TabIndex = 25;
             this.btnAns4.UseVisualStyleBackColor = false;
-            this.btnAns4.MouseClick += new System.Windows.Forms.MouseEventHandler(this.AnsClicked);
+            this.btnAns4.MouseClick += new System.Windows.Forms.MouseEventHandler(this.AnsButtonClicked);
             // 
             // btnAns2
             // 
@@ -408,7 +408,7 @@ namespace WhoWantsToBeAMillionaire
             this.btnAns2.Size = new System.Drawing.Size(210, 30);
             this.btnAns2.TabIndex = 26;
             this.btnAns2.UseVisualStyleBackColor = false;
-            this.btnAns2.MouseClick += new System.Windows.Forms.MouseEventHandler(this.AnsClicked);
+            this.btnAns2.MouseClick += new System.Windows.Forms.MouseEventHandler(this.AnsButtonClicked);
             // 
             // btnAns1
             // 
@@ -425,7 +425,7 @@ namespace WhoWantsToBeAMillionaire
             this.btnAns1.Size = new System.Drawing.Size(210, 30);
             this.btnAns1.TabIndex = 27;
             this.btnAns1.UseVisualStyleBackColor = false;
-            this.btnAns1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.AnsClicked);
+            this.btnAns1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.AnsButtonClicked);
             // 
             // WWTBAM
             // 
