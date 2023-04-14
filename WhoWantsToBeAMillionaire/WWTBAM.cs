@@ -17,15 +17,15 @@ namespace WhoWantsToBeAMillionaire
 {
     public partial class WWTBAM : Form
     {
+        Random rand = new Random();
+
         private List<Button> buttons;
         private List<Label> labels;
-        Random rand = new Random();
-        int questionCounter = 1;
-
-        int secondsCounter = 0;
-        string date = DateTime.Now.Date.ToShortDateString();
-
-        List<int> usedQuestions = new List<int>();
+        private List<int> usedQuestions = new List<int>();
+      
+        private int questionCounter = 1;
+        private int secondsCounter = 0;
+        private string date = DateTime.Now.Date.ToShortDateString();
 
         private Question GetItems(int requestedDifficulty)
         {
@@ -45,22 +45,22 @@ namespace WhoWantsToBeAMillionaire
                 Question selectedQuestion;
                 do
                 {
-                    randomIndex = rand.Next(0, questions.Count);
+                    randomIndex = rand.Next(0, questions.Count + 1);
                     selectedQuestion = questions[randomIndex];
                 }
                 while (usedQuestions.Contains(selectedQuestion.questionIndex));
 
                 return selectedQuestion;
             }
-
+            
             return null;
         }
 
         private void ChangeButtons(Question question)
         {
             lblQst.Text = question.questionText;
+
             HashSet<int> generatedNumbers = new HashSet<int>(); 
-            Random rand = new Random();
 
             for (int i = 0; i < 4; i++)
             {
@@ -78,6 +78,7 @@ namespace WhoWantsToBeAMillionaire
         public WWTBAM()
         {
             InitializeComponent();
+
             buttons = new List<Button>
             {
                 btnAns1,
@@ -109,7 +110,7 @@ namespace WhoWantsToBeAMillionaire
         private void Form1_Load(object sender, EventArgs e)
         {
             XMLEditor program = new XMLEditor();
-            program.AddItems();
+            program.SetItems();
             ChangeButtons(GetItems(2));
         }
 

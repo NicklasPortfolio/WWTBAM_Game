@@ -21,7 +21,7 @@ namespace WhoWantsToBeAMillionaire
         public int correctIndex { get; set; }
         }
 
-        public void AddItems()
+        public void SetItems()
         {
             List<Question> questionsList = new List<Question>
             {
