@@ -91,7 +91,7 @@ namespace WhoWantsToBeAMillionaire
                 {
                     questionIndex = 6,
                     questionText = "What was the first Disney full-length animated feature to be produced in full color?",
-                    options = new List<string> { "Sleeping Beauty", "Snow White and the Seven Dwarfs", "Cinderella", "Fantasia" },
+                    options = new List<string> { "Sleeping Beauty", "Snow White", "Cinderella", "Fantasia" },
                     difficulty = 1,
                     correctIndex = 3
                 },

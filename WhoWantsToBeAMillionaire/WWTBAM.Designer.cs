@@ -55,6 +55,7 @@ namespace WhoWantsToBeAMillionaire
             this.btnAns4 = new System.Windows.Forms.Button();
             this.btnAns2 = new System.Windows.Forms.Button();
             this.btnAns1 = new System.Windows.Forms.Button();
+            this.timerSounds = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -63,7 +64,7 @@ namespace WhoWantsToBeAMillionaire
             this.listView1.BackColor = System.Drawing.Color.Black;
             this.listView1.HideSelection = false;
             this.listView1.Location = new System.Drawing.Point(515, -1);
-            this.listView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listView1.Margin = new System.Windows.Forms.Padding(2);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(233, 430);
             this.listView1.TabIndex = 0;
@@ -270,7 +271,7 @@ namespace WhoWantsToBeAMillionaire
             this.listView2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.listView2.HideSelection = false;
             this.listView2.Location = new System.Drawing.Point(27, 26);
-            this.listView2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listView2.Margin = new System.Windows.Forms.Padding(2);
             this.listView2.Name = "listView2";
             this.listView2.Size = new System.Drawing.Size(254, 21);
             this.listView2.TabIndex = 16;
@@ -300,7 +301,7 @@ namespace WhoWantsToBeAMillionaire
             this.btnAsk.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnAsk.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAsk.Location = new System.Drawing.Point(526, 8);
-            this.btnAsk.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAsk.Margin = new System.Windows.Forms.Padding(2);
             this.btnAsk.Name = "btnAsk";
             this.btnAsk.Size = new System.Drawing.Size(68, 40);
             this.btnAsk.TabIndex = 18;
@@ -313,7 +314,7 @@ namespace WhoWantsToBeAMillionaire
             this.btnPhone.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnPhone.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPhone.Location = new System.Drawing.Point(600, 8);
-            this.btnPhone.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnPhone.Margin = new System.Windows.Forms.Padding(2);
             this.btnPhone.Name = "btnPhone";
             this.btnPhone.Size = new System.Drawing.Size(68, 40);
             this.btnPhone.TabIndex = 19;
@@ -326,7 +327,7 @@ namespace WhoWantsToBeAMillionaire
             this.btn5050.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn5050.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn5050.Location = new System.Drawing.Point(672, 8);
-            this.btn5050.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn5050.Margin = new System.Windows.Forms.Padding(2);
             this.btn5050.Name = "btn5050";
             this.btn5050.Size = new System.Drawing.Size(68, 40);
             this.btn5050.TabIndex = 20;
@@ -338,7 +339,7 @@ namespace WhoWantsToBeAMillionaire
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Location = new System.Drawing.Point(-1, 239);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(512, 188);
             this.pictureBox1.TabIndex = 22;
@@ -354,7 +355,7 @@ namespace WhoWantsToBeAMillionaire
             this.btnAns3.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAns3.ForeColor = System.Drawing.Color.Transparent;
             this.btnAns3.Location = new System.Drawing.Point(27, 387);
-            this.btnAns3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAns3.Margin = new System.Windows.Forms.Padding(2);
             this.btnAns3.Name = "btnAns3";
             this.btnAns3.Size = new System.Drawing.Size(210, 30);
             this.btnAns3.TabIndex = 23;
@@ -386,7 +387,7 @@ namespace WhoWantsToBeAMillionaire
             this.btnAns4.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAns4.ForeColor = System.Drawing.Color.Transparent;
             this.btnAns4.Location = new System.Drawing.Point(273, 387);
-            this.btnAns4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAns4.Margin = new System.Windows.Forms.Padding(2);
             this.btnAns4.Name = "btnAns4";
             this.btnAns4.Size = new System.Drawing.Size(210, 30);
             this.btnAns4.TabIndex = 25;
@@ -403,7 +404,7 @@ namespace WhoWantsToBeAMillionaire
             this.btnAns2.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAns2.ForeColor = System.Drawing.Color.Transparent;
             this.btnAns2.Location = new System.Drawing.Point(273, 335);
-            this.btnAns2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAns2.Margin = new System.Windows.Forms.Padding(2);
             this.btnAns2.Name = "btnAns2";
             this.btnAns2.Size = new System.Drawing.Size(210, 30);
             this.btnAns2.TabIndex = 26;
@@ -420,12 +421,16 @@ namespace WhoWantsToBeAMillionaire
             this.btnAns1.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAns1.ForeColor = System.Drawing.Color.Transparent;
             this.btnAns1.Location = new System.Drawing.Point(27, 335);
-            this.btnAns1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAns1.Margin = new System.Windows.Forms.Padding(2);
             this.btnAns1.Name = "btnAns1";
             this.btnAns1.Size = new System.Drawing.Size(210, 30);
             this.btnAns1.TabIndex = 27;
             this.btnAns1.UseVisualStyleBackColor = false;
             this.btnAns1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.AnsButtonClicked);
+            // 
+            // timerSounds
+            // 
+            this.timerSounds.Interval = 1000;
             // 
             // WWTBAM
             // 
@@ -464,7 +469,7 @@ namespace WhoWantsToBeAMillionaire
             this.Controls.Add(this.pictureBox1);
             this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "WWTBAM";
             this.Text = "Who Wants to be a Millionaire";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -505,6 +510,7 @@ namespace WhoWantsToBeAMillionaire
         private System.Windows.Forms.Button btnAns4;
         private System.Windows.Forms.Button btnAns2;
         private System.Windows.Forms.Button btnAns1;
+        private System.Windows.Forms.Timer timerSounds;
     }
 }
 

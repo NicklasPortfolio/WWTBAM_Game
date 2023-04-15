@@ -74,6 +74,10 @@ namespace WhoWantsToBeAMillionaire
 
                 generatedNumbers.Add(randomNumber); 
                 buttons[randomNumber].Text = question.options[i];
+                if (question.correctIndex == i)
+                {
+                    buttons[randomNumber].Tag = "correct";
+                }
             }
         }
 
@@ -126,22 +130,43 @@ namespace WhoWantsToBeAMillionaire
             Button button = sender as Button;
             Question question;
 
-            if (questionCounter < 5)
+            if (button.Tag == "correct")
             {
-                question = GetItems(1);
-            }
-            else if (questionCounter > 5 && questionCounter <= 10)
-            {
-                question = GetItems(2);
-            }
-            else
-            {
-                question = GetItems(3);
+                if (questionCounter == 15)
+                {
+                    timerTime.Stop();
+                    MessageBox.Show($"Congratulations! You've won the million!", "You won!");
+                    this.Close();
+                }
+
+                else
+                {
+                    if (questionCounter < 5)
+                    {
+                        question = GetItems(1);
+                    }
+                    else if (questionCounter > 5 && questionCounter <= 10)
+                    {
+                        question = GetItems(2);
+                    }
+                    else
+                    {
+                        question = GetItems(3);
+                    }
+
+                    questionCounter++;
+                    button.Tag = null;
+                    ChangeButtons(question);
+                    NextLabel();
+                }
             }
 
-            questionCounter++;
-            ChangeButtons(question);
-            NextLabel();
+            else
+            {
+                timerTime.Stop();
+                MessageBox.Show($"You lost! See you next time!", "You lost!");
+                this.Close();
+            }
         }
 
         private void timerTime_Tick(object sender, EventArgs e)
