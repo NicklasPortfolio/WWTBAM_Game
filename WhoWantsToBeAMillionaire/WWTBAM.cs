@@ -122,7 +122,7 @@ namespace WhoWantsToBeAMillionaire
             Button button = sender as Button;
             Question question;
 
-            if (button.Tag == "correct")
+            if ((string)button.Tag == "correct")
             {
                 if (questionCounter == 15)
                 {
