@@ -133,7 +133,7 @@ namespace WhoWantsToBeAMillionaire
             XMLEditor program = new XMLEditor();
             program.SetItems();
             ChangeButtons(GetItems(1));
-            PlayAudio("To1000.wav", true);
+            PlayAudio(@"Audio\To1000.wav", true);
         }
 
         private void AnsButtonClicked(object sender, MouseEventArgs e)
@@ -144,7 +144,7 @@ namespace WhoWantsToBeAMillionaire
             button.BackColor = Color.Gold;
             button.Update();
 
-            PlayAudio("FinalAnswer.wav", false);
+            PlayAudio(@"Audio\FinalAnswer.wav", false);
             System.Threading.Thread.Sleep(4000);
 
             if ((string)button.Tag == "correct")
@@ -152,12 +152,12 @@ namespace WhoWantsToBeAMillionaire
                 button.BackColor = Color.ForestGreen;
                 button.Update();
 
-                PlayAudio("Correct.wav", false);
+                PlayAudio(@"Audio\Correct.wav", false);
                 System.Threading.Thread.Sleep(4000);
 
                 if (questionCounter == 15)
                 {
-                    PlayAudio("Win.wav", false);
+                    PlayAudio(@"Audio\Win.wav", false);
                     MessageBox.Show($"Congratulations! You've won the million!", "You won!");
                     this.Close();
                 }
@@ -167,17 +167,17 @@ namespace WhoWantsToBeAMillionaire
                     if (questionCounter < 5)
                     {
                         question = GetItems(1);
-                        PlayAudio("To1000.wav", true);
+                        PlayAudio(@"Audio\To1000.wav", true);
                     }
                     else if (questionCounter > 4 && questionCounter < 10)
                     {
                         question = GetItems(2);
-                        PlayAudio("To32000.wav", true);
+                        PlayAudio(@"Audio\To32000.wav", true);
                     }
                     else
                     {
                         question = GetItems(3);
-                        PlayAudio("To1M.wav", true);
+                        PlayAudio(@"Audio\To1M.wav", true);
                     }
 
                     button.Tag = null;
@@ -190,7 +190,7 @@ namespace WhoWantsToBeAMillionaire
                 button.BackColor = Color.Firebrick;
                 button.Update();
 
-                PlayAudio("Incorrect.wav", false);
+                PlayAudio(@"Audio\Incorrect.wav", false);
                 System.Threading.Thread.Sleep(4100);
 
                 MessageBox.Show($"You lost! See you next time!", "You lost!");
@@ -226,7 +226,7 @@ namespace WhoWantsToBeAMillionaire
                 button.Enabled = false;
 
             }
-            SoundPlayer sound = new SoundPlayer("5050Sound.wav");
+            SoundPlayer sound = new SoundPlayer(@"Audio\5050Sound.wav");
             sound.Play();
 
             btn5050.Enabled = false;
