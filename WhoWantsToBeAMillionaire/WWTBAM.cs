@@ -86,6 +86,7 @@ namespace WhoWantsToBeAMillionaire
         private void PlayAudio(string fileName, bool loop)
         {
             SoundPlayer audio = new SoundPlayer(fileName);
+
             if (loop)
             {
                 audio.PlayLooping();
