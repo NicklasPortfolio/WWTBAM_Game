@@ -142,6 +142,7 @@ namespace WhoWantsToBeAMillionaire
 
             button.BackColor = Color.Gold;
             button.Update();
+
             PlayAudio("FinalAnswer.wav", false);
             System.Threading.Thread.Sleep(4000);
 
@@ -149,6 +150,7 @@ namespace WhoWantsToBeAMillionaire
             {
                 button.BackColor = Color.ForestGreen;
                 button.Update();
+
                 PlayAudio("Correct.wav", false);
                 System.Threading.Thread.Sleep(4000);
 
@@ -165,19 +167,16 @@ namespace WhoWantsToBeAMillionaire
                     {
                         question = GetItems(1);
                         PlayAudio("To1000.wav", true);
-                        MessageBox.Show("1-4");
                     }
                     else if (questionCounter > 4 && questionCounter < 10)
                     {
                         question = GetItems(2);
                         PlayAudio("To32000.wav", true);
-                        MessageBox.Show("5-10");
                     }
                     else
                     {
                         question = GetItems(3);
                         PlayAudio("To1M.wav", true);
-                        MessageBox.Show("10-15");
                     }
 
                     button.Tag = null;
@@ -189,14 +188,48 @@ namespace WhoWantsToBeAMillionaire
             {
                 button.BackColor = Color.Firebrick;
                 button.Update();
+
                 PlayAudio("Incorrect.wav", false);
                 System.Threading.Thread.Sleep(4100);
 
                 MessageBox.Show($"You lost! See you next time!", "You lost!");
                 this.Close();
             }
+
             button.BackColor = Color.MidnightBlue;
             button.Update();
+
+            foreach (Button buttonObject in buttons)
+            {
+                buttonObject.Enabled = true;
+            }
+        }
+        private void btn5050_Click(object sender, EventArgs e)
+        {
+            List<Button> tobeDisabled = new List<Button>();
+
+            foreach (Button button in buttons)
+            {
+                if (tobeDisabled.Count == 2)
+                {
+                    break;
+                }
+                else if ((string)button.Tag != "correct")
+                {
+                    tobeDisabled.Add(button);
+                }
+            }
+
+            foreach (Button button in tobeDisabled)
+            {
+                button.Enabled = false;
+
+            }
+            SoundPlayer sound = new SoundPlayer("5050Sound.wav");
+            sound.Play();
+
+            btn5050.Enabled = false;
+            btn5050.BackgroundImage = null;
         }
 
         private void timerTime_Tick(object sender, EventArgs e)

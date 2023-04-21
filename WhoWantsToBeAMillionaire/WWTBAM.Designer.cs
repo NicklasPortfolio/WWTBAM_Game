@@ -311,6 +311,7 @@ namespace WhoWantsToBeAMillionaire
             this.btn5050.Size = new System.Drawing.Size(102, 62);
             this.btn5050.TabIndex = 20;
             this.btn5050.UseVisualStyleBackColor = false;
+            this.btn5050.Click += new System.EventHandler(this.btn5050_Click);
             // 
             // pictureBox1
             // 
