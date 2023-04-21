@@ -438,7 +438,7 @@ namespace WhoWantsToBeAMillionaire
             // 
             // lblWin
             // 
-            this.lblWin.BackColor = System.Drawing.Color.MidnightBlue;
+            this.lblWin.BackColor = System.Drawing.Color.Transparent;
             this.lblWin.Font = new System.Drawing.Font("Myanmar Text", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblWin.ForeColor = System.Drawing.Color.Gold;
             this.lblWin.Location = new System.Drawing.Point(27, 111);

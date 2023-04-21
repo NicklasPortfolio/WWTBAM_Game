@@ -20,7 +20,7 @@ namespace WhoWantsToBeAMillionaire
         private List<Label> labels;
         private List<int> usedQuestions = new List<int>();
       
-        private int questionCounter = 1;
+        private int questionCounter = 14;
         private int secondsCounter = 0;
         private int animCounter = 0;
         private int colorSwitch = 0;
@@ -157,31 +157,11 @@ namespace WhoWantsToBeAMillionaire
                 button.BackColor = Color.ForestGreen;
                 button.Update();
 
-                PlayAudio(@"Audio\Correct.wav", false);
-                System.Threading.Thread.Sleep(4000);
-
-                if (questionCounter == 15)
+                if (questionCounter < 15) 
                 {
-                    lblQst.Text = null;
-                    lblWin.Visible = true;
+                    PlayAudio(@"Audio\Correct.wav", false);
+                    System.Threading.Thread.Sleep(4000);
 
-                    foreach (Button buttonObject in buttons)
-                    {
-                        buttonObject.Text = null;
-                        buttonObject.Enabled = false;
-                    }
-
-                    foreach (Label labelObject in labels)
-                    {
-                        labelObject.ForeColor = Color.ForestGreen;
-                    }
-
-                    PlayAudio(@"Audio\Win.wav", false);
-                    timerWin.Start();
-                    timerLabels.Start();
-                }
-                else
-                {
                     questionCounter++;
                     if (questionCounter < 5)
                     {
@@ -203,7 +183,29 @@ namespace WhoWantsToBeAMillionaire
                     ChangeButtons(question);
                     NextLabel();
                 }
+
+                else
+                {
+                    lblQst.Text = null;
+                    lblWin.Visible = true;
+
+                    foreach (Button buttonObject in buttons)
+                    {
+                        buttonObject.Text = null;
+                        buttonObject.Enabled = false;
+                    }
+
+                    foreach (Label labelObject in labels)
+                    {
+                        labelObject.ForeColor = Color.ForestGreen;
+                    }
+
+                    PlayAudio(@"Audio\Win.wav", false);
+                    timerWin.Start();
+                    timerLabels.Start();
+                }
             }
+
             else
             {
                 button.BackColor = Color.Firebrick;
