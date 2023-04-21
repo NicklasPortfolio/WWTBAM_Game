@@ -86,7 +86,7 @@ namespace WhoWantsToBeAMillionaire
                     questionIndex = 6,
                     questionText = "What was the first Disney full-length animated feature to be produced in full color?",
                     options = new List<string> { "Sleeping Beauty", "Snow White", "Cinderella", "Fantasia" },
-                    difficulty = 1,
+                    difficulty = 2,
                     correctIndex = 3
                 },
 
@@ -126,7 +126,7 @@ namespace WhoWantsToBeAMillionaire
                     correctIndex = 0
                 },
 
-                new Question 
+                new Question
                 {
                     questionIndex = 11,
                     questionText = "What is the capital city of Canada?",
@@ -135,7 +135,7 @@ namespace WhoWantsToBeAMillionaire
                     correctIndex = 1
                 },
 
-                new Question 
+                new Question
                 {
                     questionIndex = 12,
                     questionText = "Which element has the highest electron affinity?",
@@ -144,7 +144,7 @@ namespace WhoWantsToBeAMillionaire
                     correctIndex = 0
                 },
 
-                new Question 
+                new Question
                 {
                     questionIndex = 13,
                     questionText = "What is the name of the phenomenon where light is bent as it passes through a medium?",
@@ -153,16 +153,16 @@ namespace WhoWantsToBeAMillionaire
                     correctIndex = 0
                 },
 
-                new Question 
+                new Question
                 {
                     questionIndex = 14,
                     questionText = "Which element has the highest melting point?",
                     options = new List<string> { "Tungsten", "Platinum", "Carbon", "Osmium" },
-                    difficulty = 3,
+                    difficulty = 2,
                     correctIndex = 0
                 },
 
-                new Question 
+                new Question
                 {
                     questionIndex = 15,
                     questionText = "What is the probability of rolling a sum of 7 with two fair six-sided dice?",
@@ -171,13 +171,40 @@ namespace WhoWantsToBeAMillionaire
                     correctIndex = 0
                 },
 
-                new Question 
+                new Question
                 {
                     questionIndex = 16,
                     questionText = "What is the sum of the first 50 positive integers?",
                     options = new List<string> { "1225", "1275", "2500", "2550" },
                     difficulty = 3,
                     correctIndex = 2
+                },
+
+                new Question
+                {
+                    questionIndex = 17,
+                    questionText = "Who developed the first successful vaccine in history?",
+                    options = new List<string> { "Dr Edward Jenner", "Hilary Koprowski", "Jonas Salk", "World Health Organization" },
+                    difficulty = 3,
+                    correctIndex = 0
+                },
+
+                new Question
+                {
+                    questionIndex = 18,
+                    questionText = "What is the name of the chemical element with the symbol 'I'?",
+                    options = new List<string> { "Silicon", "Iridium", "Iron", "Iodine" },
+                    difficulty = 2,
+                    correctIndex = 3
+                },
+
+                new Question
+                {
+                    questionIndex = 19,
+                    questionText = "What is the name of the first woman to win a Nobel Prize?",
+                    options = new List<string> { "Rosalind Franklin", "Marie Curie", "Jane Goodall", "Dorothy Hodgkin" },
+                    difficulty = 2,
+                    correctIndex = 1
                 }
             };
 

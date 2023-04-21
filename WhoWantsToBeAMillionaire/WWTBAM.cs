@@ -1,6 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
+using System.Linq;
+using System.Media;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Serialization;
 using Question = WhoWantsToBeAMillionaire.XMLEditor.Question;
@@ -78,6 +82,19 @@ namespace WhoWantsToBeAMillionaire
             labels[questionCounter - 2].Text = labels[questionCounter - 2].Text.Trim(new char[] { '<' });
             labels[questionCounter - 1].Text += " <";
         }
+
+        private void PlayAudio(string fileName, bool loop)
+        {
+            SoundPlayer audio = new SoundPlayer(fileName);
+            if (loop)
+            {
+                audio.PlayLooping();
+            }
+            else
+            {
+                audio.Play();
+            }
+        }
         public WWTBAM()
         {
             InitializeComponent();
@@ -115,6 +132,7 @@ namespace WhoWantsToBeAMillionaire
             XMLEditor program = new XMLEditor();
             program.SetItems();
             ChangeButtons(GetItems(1));
+            PlayAudio("To1000.wav", true);
         }
 
         private void AnsButtonClicked(object sender, MouseEventArgs e)
@@ -122,43 +140,63 @@ namespace WhoWantsToBeAMillionaire
             Button button = sender as Button;
             Question question;
 
+            button.BackColor = Color.Gold;
+            button.Update();
+            PlayAudio("FinalAnswer.wav", false);
+            System.Threading.Thread.Sleep(4000);
+
             if ((string)button.Tag == "correct")
             {
+                button.BackColor = Color.ForestGreen;
+                button.Update();
+                PlayAudio("Correct.wav", false);
+                System.Threading.Thread.Sleep(4000);
+
                 if (questionCounter == 15)
                 {
-                    timerTime.Stop();
+                    PlayAudio("Win.wav", false);
                     MessageBox.Show($"Congratulations! You've won the million!", "You won!");
                     this.Close();
                 }
-
                 else
                 {
+                    questionCounter++;
                     if (questionCounter < 5)
                     {
                         question = GetItems(1);
+                        PlayAudio("To1000.wav", true);
+                        MessageBox.Show("1-4");
                     }
-                    else if (questionCounter > 5 && questionCounter <= 10)
+                    else if (questionCounter > 4 && questionCounter < 10)
                     {
                         question = GetItems(2);
+                        PlayAudio("To32000.wav", true);
+                        MessageBox.Show("5-10");
                     }
                     else
                     {
                         question = GetItems(3);
+                        PlayAudio("To1M.wav", true);
+                        MessageBox.Show("10-15");
                     }
 
-                    questionCounter++;
                     button.Tag = null;
                     ChangeButtons(question);
                     NextLabel();
                 }
             }
-
             else
             {
-                timerTime.Stop();
+                button.BackColor = Color.Firebrick;
+                button.Update();
+                PlayAudio("Incorrect.wav", false);
+                System.Threading.Thread.Sleep(4100);
+
                 MessageBox.Show($"You lost! See you next time!", "You lost!");
                 this.Close();
             }
+            button.BackColor = Color.MidnightBlue;
+            button.Update();
         }
 
         private void timerTime_Tick(object sender, EventArgs e)
