@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Media;
 using System.Threading.Tasks;
+using System.Timers;
 using System.Windows.Forms;
 using System.Xml.Serialization;
 using Question = WhoWantsToBeAMillionaire.XMLEditor.Question;
@@ -21,6 +22,10 @@ namespace WhoWantsToBeAMillionaire
       
         private int questionCounter = 1;
         private int secondsCounter = 0;
+        private int animCounter = 0;
+        private int colorSwitch = 0;
+        private int iterator = 0;
+
         private string date = DateTime.Now.Date.ToShortDateString();
 
         private Question GetItems(int requestedDifficulty)
@@ -157,9 +162,23 @@ namespace WhoWantsToBeAMillionaire
 
                 if (questionCounter == 15)
                 {
+                    lblQst.Text = null;
+                    lblWin.Visible = true;
+
+                    foreach (Button buttonObject in buttons)
+                    {
+                        buttonObject.Text = null;
+                        buttonObject.Enabled = false;
+                    }
+
+                    foreach (Label labelObject in labels)
+                    {
+                        labelObject.ForeColor = Color.ForestGreen;
+                    }
+
                     PlayAudio(@"Audio\Win.wav", false);
-                    MessageBox.Show($"Congratulations! You've won the million!", "You won!");
-                    this.Close();
+                    timerWin.Start();
+                    timerLabels.Start();
                 }
                 else
                 {
@@ -237,6 +256,52 @@ namespace WhoWantsToBeAMillionaire
         {
             secondsCounter++;
             lblDate.Text = $"{date} | {secondsCounter} seconds";
+        }
+
+        private void timerWin_Tick(object sender, EventArgs e)
+        {
+            if (animCounter < 68)
+            {
+                lblWin.ForeColor = (colorSwitch == 0) ? Color.White : Color.Gold;
+                buttons[0].BackColor = (colorSwitch == 0) ? Color.Gold : Color.White;
+                buttons[1].BackColor = (colorSwitch == 0) ? Color.White : Color.Gold;
+                buttons[2].BackColor = (colorSwitch == 0) ? Color.White : Color.Gold;
+                buttons[3].BackColor = (colorSwitch == 0) ? Color.Gold : Color.White;
+                colorSwitch = 1 - colorSwitch;
+            }
+
+            else if (animCounter == 72)
+            {
+                timerWin.Stop();
+                MessageBox.Show($"Congratulations! You've won the million!", "You won!");
+                this.Close();
+            }
+
+            else
+            {
+                if (iterator < buttons.Count)
+                {
+                    buttons[iterator].BackColor = Color.ForestGreen;
+                    iterator++;
+                }
+            }
+            animCounter++;
+        }
+
+        Color[] colors = { Color.Gold, Color.ForestGreen };
+        int colorIndex = 0;
+        private void timerLabels_Tick(object sender, EventArgs e)
+        {
+            for (int i = 0; i < labels.Count; i++)
+            {
+                labels[i].ForeColor = colors[colorIndex];
+                colorIndex = (colorIndex + 1) % colors.Length;
+            }
+
+            if (animCounter == 72)
+            {
+                timerLabels.Stop();
+            }
         }
     }
 }

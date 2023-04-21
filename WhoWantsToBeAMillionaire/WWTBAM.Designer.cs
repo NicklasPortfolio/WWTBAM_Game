@@ -55,7 +55,9 @@ namespace WhoWantsToBeAMillionaire
             this.btnAns4 = new System.Windows.Forms.Button();
             this.btnAns2 = new System.Windows.Forms.Button();
             this.btnAns1 = new System.Windows.Forms.Button();
-            this.timerSounds = new System.Windows.Forms.Timer(this.components);
+            this.timerWin = new System.Windows.Forms.Timer(this.components);
+            this.lblWin = new System.Windows.Forms.Label();
+            this.timerLabels = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -63,9 +65,10 @@ namespace WhoWantsToBeAMillionaire
             // 
             this.listView1.BackColor = System.Drawing.Color.Black;
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(772, -2);
+            this.listView1.Location = new System.Drawing.Point(515, -1);
+            this.listView1.Margin = new System.Windows.Forms.Padding(2);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(348, 659);
+            this.listView1.Size = new System.Drawing.Size(233, 430);
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             // 
@@ -75,9 +78,10 @@ namespace WhoWantsToBeAMillionaire
             this.lbl15.BackColor = System.Drawing.Color.Black;
             this.lbl15.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl15.ForeColor = System.Drawing.Color.White;
-            this.lbl15.Location = new System.Drawing.Point(800, 77);
+            this.lbl15.Location = new System.Drawing.Point(533, 50);
+            this.lbl15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl15.Name = "lbl15";
-            this.lbl15.Size = new System.Drawing.Size(203, 43);
+            this.lbl15.Size = new System.Drawing.Size(131, 29);
             this.lbl15.TabIndex = 1;
             this.lbl15.Text = "15. $ 1 MILLION";
             // 
@@ -87,9 +91,10 @@ namespace WhoWantsToBeAMillionaire
             this.lbl14.BackColor = System.Drawing.Color.Black;
             this.lbl14.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl14.ForeColor = System.Drawing.Color.Goldenrod;
-            this.lbl14.Location = new System.Drawing.Point(800, 112);
+            this.lbl14.Location = new System.Drawing.Point(533, 73);
+            this.lbl14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl14.Name = "lbl14";
-            this.lbl14.Size = new System.Drawing.Size(173, 43);
+            this.lbl14.Size = new System.Drawing.Size(110, 29);
             this.lbl14.TabIndex = 2;
             this.lbl14.Text = "14. $ 500.000";
             // 
@@ -99,9 +104,10 @@ namespace WhoWantsToBeAMillionaire
             this.lbl12.BackColor = System.Drawing.Color.Black;
             this.lbl12.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl12.ForeColor = System.Drawing.Color.Goldenrod;
-            this.lbl12.Location = new System.Drawing.Point(800, 185);
+            this.lbl12.Location = new System.Drawing.Point(533, 120);
+            this.lbl12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl12.Name = "lbl12";
-            this.lbl12.Size = new System.Drawing.Size(173, 43);
+            this.lbl12.Size = new System.Drawing.Size(110, 29);
             this.lbl12.TabIndex = 4;
             this.lbl12.Text = "12. $ 125.000";
             // 
@@ -111,9 +117,10 @@ namespace WhoWantsToBeAMillionaire
             this.lbl13.BackColor = System.Drawing.Color.Black;
             this.lbl13.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl13.ForeColor = System.Drawing.Color.Goldenrod;
-            this.lbl13.Location = new System.Drawing.Point(800, 149);
+            this.lbl13.Location = new System.Drawing.Point(533, 97);
+            this.lbl13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl13.Name = "lbl13";
-            this.lbl13.Size = new System.Drawing.Size(173, 43);
+            this.lbl13.Size = new System.Drawing.Size(110, 29);
             this.lbl13.TabIndex = 3;
             this.lbl13.Text = "13. $ 250.000";
             // 
@@ -123,9 +130,10 @@ namespace WhoWantsToBeAMillionaire
             this.lbl8.BackColor = System.Drawing.Color.Black;
             this.lbl8.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl8.ForeColor = System.Drawing.Color.Goldenrod;
-            this.lbl8.Location = new System.Drawing.Point(800, 331);
+            this.lbl8.Location = new System.Drawing.Point(533, 215);
+            this.lbl8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl8.Name = "lbl8";
-            this.lbl8.Size = new System.Drawing.Size(131, 43);
+            this.lbl8.Size = new System.Drawing.Size(83, 29);
             this.lbl8.TabIndex = 8;
             this.lbl8.Text = "8. $ 8.000";
             // 
@@ -135,9 +143,10 @@ namespace WhoWantsToBeAMillionaire
             this.lbl9.BackColor = System.Drawing.Color.Black;
             this.lbl9.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl9.ForeColor = System.Drawing.Color.Goldenrod;
-            this.lbl9.Location = new System.Drawing.Point(800, 295);
+            this.lbl9.Location = new System.Drawing.Point(533, 192);
+            this.lbl9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl9.Name = "lbl9";
-            this.lbl9.Size = new System.Drawing.Size(145, 43);
+            this.lbl9.Size = new System.Drawing.Size(92, 29);
             this.lbl9.TabIndex = 7;
             this.lbl9.Text = "9. $ 16.000";
             // 
@@ -147,9 +156,10 @@ namespace WhoWantsToBeAMillionaire
             this.lbl10.BackColor = System.Drawing.Color.Black;
             this.lbl10.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl10.ForeColor = System.Drawing.Color.White;
-            this.lbl10.Location = new System.Drawing.Point(800, 258);
+            this.lbl10.Location = new System.Drawing.Point(533, 168);
+            this.lbl10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl10.Name = "lbl10";
-            this.lbl10.Size = new System.Drawing.Size(159, 43);
+            this.lbl10.Size = new System.Drawing.Size(101, 29);
             this.lbl10.TabIndex = 6;
             this.lbl10.Text = "10. $ 32.000";
             // 
@@ -159,9 +169,10 @@ namespace WhoWantsToBeAMillionaire
             this.lbl11.BackColor = System.Drawing.Color.Black;
             this.lbl11.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl11.ForeColor = System.Drawing.Color.Goldenrod;
-            this.lbl11.Location = new System.Drawing.Point(800, 223);
+            this.lbl11.Location = new System.Drawing.Point(533, 145);
+            this.lbl11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl11.Name = "lbl11";
-            this.lbl11.Size = new System.Drawing.Size(159, 43);
+            this.lbl11.Size = new System.Drawing.Size(101, 29);
             this.lbl11.TabIndex = 5;
             this.lbl11.Text = "11. $ 64.000";
             // 
@@ -171,9 +182,10 @@ namespace WhoWantsToBeAMillionaire
             this.lbl1.BackColor = System.Drawing.Color.Black;
             this.lbl1.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl1.ForeColor = System.Drawing.Color.Goldenrod;
-            this.lbl1.Location = new System.Drawing.Point(800, 585);
+            this.lbl1.Location = new System.Drawing.Point(533, 380);
+            this.lbl1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl1.Name = "lbl1";
-            this.lbl1.Size = new System.Drawing.Size(134, 43);
+            this.lbl1.Size = new System.Drawing.Size(85, 29);
             this.lbl1.TabIndex = 15;
             this.lbl1.Text = "1. $ 100 <";
             // 
@@ -183,9 +195,10 @@ namespace WhoWantsToBeAMillionaire
             this.lbl2.BackColor = System.Drawing.Color.Black;
             this.lbl2.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl2.ForeColor = System.Drawing.Color.Goldenrod;
-            this.lbl2.Location = new System.Drawing.Point(800, 549);
+            this.lbl2.Location = new System.Drawing.Point(533, 357);
+            this.lbl2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl2.Name = "lbl2";
-            this.lbl2.Size = new System.Drawing.Size(110, 43);
+            this.lbl2.Size = new System.Drawing.Size(70, 29);
             this.lbl2.TabIndex = 14;
             this.lbl2.Text = "2. $ 200";
             // 
@@ -195,9 +208,10 @@ namespace WhoWantsToBeAMillionaire
             this.lbl3.BackColor = System.Drawing.Color.Black;
             this.lbl3.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl3.ForeColor = System.Drawing.Color.Goldenrod;
-            this.lbl3.Location = new System.Drawing.Point(800, 512);
+            this.lbl3.Location = new System.Drawing.Point(533, 333);
+            this.lbl3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl3.Name = "lbl3";
-            this.lbl3.Size = new System.Drawing.Size(110, 43);
+            this.lbl3.Size = new System.Drawing.Size(70, 29);
             this.lbl3.TabIndex = 13;
             this.lbl3.Text = "3. $ 300";
             // 
@@ -207,9 +221,10 @@ namespace WhoWantsToBeAMillionaire
             this.lbl4.BackColor = System.Drawing.Color.Black;
             this.lbl4.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl4.ForeColor = System.Drawing.Color.Goldenrod;
-            this.lbl4.Location = new System.Drawing.Point(800, 475);
+            this.lbl4.Location = new System.Drawing.Point(533, 309);
+            this.lbl4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl4.Name = "lbl4";
-            this.lbl4.Size = new System.Drawing.Size(110, 43);
+            this.lbl4.Size = new System.Drawing.Size(70, 29);
             this.lbl4.TabIndex = 12;
             this.lbl4.Text = "4. $ 500";
             // 
@@ -219,9 +234,10 @@ namespace WhoWantsToBeAMillionaire
             this.lbl5.BackColor = System.Drawing.Color.Black;
             this.lbl5.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl5.ForeColor = System.Drawing.Color.White;
-            this.lbl5.Location = new System.Drawing.Point(800, 438);
+            this.lbl5.Location = new System.Drawing.Point(533, 285);
+            this.lbl5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl5.Name = "lbl5";
-            this.lbl5.Size = new System.Drawing.Size(131, 43);
+            this.lbl5.Size = new System.Drawing.Size(83, 29);
             this.lbl5.TabIndex = 11;
             this.lbl5.Text = "5. $ 1.000";
             // 
@@ -231,9 +247,10 @@ namespace WhoWantsToBeAMillionaire
             this.lbl6.BackColor = System.Drawing.Color.Black;
             this.lbl6.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl6.ForeColor = System.Drawing.Color.Goldenrod;
-            this.lbl6.Location = new System.Drawing.Point(800, 403);
+            this.lbl6.Location = new System.Drawing.Point(533, 262);
+            this.lbl6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl6.Name = "lbl6";
-            this.lbl6.Size = new System.Drawing.Size(131, 43);
+            this.lbl6.Size = new System.Drawing.Size(83, 29);
             this.lbl6.TabIndex = 10;
             this.lbl6.Text = "6. $ 2.000";
             // 
@@ -243,9 +260,10 @@ namespace WhoWantsToBeAMillionaire
             this.lbl7.BackColor = System.Drawing.Color.Black;
             this.lbl7.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl7.ForeColor = System.Drawing.Color.Goldenrod;
-            this.lbl7.Location = new System.Drawing.Point(800, 368);
+            this.lbl7.Location = new System.Drawing.Point(533, 239);
+            this.lbl7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl7.Name = "lbl7";
-            this.lbl7.Size = new System.Drawing.Size(131, 43);
+            this.lbl7.Size = new System.Drawing.Size(83, 29);
             this.lbl7.TabIndex = 9;
             this.lbl7.Text = "7. $ 4.000";
             // 
@@ -254,9 +272,10 @@ namespace WhoWantsToBeAMillionaire
             this.listView2.BackColor = System.Drawing.Color.Black;
             this.listView2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.listView2.HideSelection = false;
-            this.listView2.Location = new System.Drawing.Point(40, 40);
+            this.listView2.Location = new System.Drawing.Point(27, 26);
+            this.listView2.Margin = new System.Windows.Forms.Padding(2);
             this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(381, 32);
+            this.listView2.Size = new System.Drawing.Size(254, 21);
             this.listView2.TabIndex = 16;
             this.listView2.UseCompatibleStateImageBehavior = false;
             // 
@@ -265,9 +284,10 @@ namespace WhoWantsToBeAMillionaire
             this.lblDate.BackColor = System.Drawing.Color.Black;
             this.lblDate.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDate.ForeColor = System.Drawing.Color.White;
-            this.lblDate.Location = new System.Drawing.Point(45, 40);
+            this.lblDate.Location = new System.Drawing.Point(30, 26);
+            this.lblDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(376, 32);
+            this.lblDate.Size = new System.Drawing.Size(251, 21);
             this.lblDate.TabIndex = 17;
             // 
             // timerTime
@@ -282,9 +302,10 @@ namespace WhoWantsToBeAMillionaire
             this.btnAsk.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAsk.BackgroundImage")));
             this.btnAsk.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnAsk.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAsk.Location = new System.Drawing.Point(789, 12);
+            this.btnAsk.Location = new System.Drawing.Point(526, 8);
+            this.btnAsk.Margin = new System.Windows.Forms.Padding(2);
             this.btnAsk.Name = "btnAsk";
-            this.btnAsk.Size = new System.Drawing.Size(102, 62);
+            this.btnAsk.Size = new System.Drawing.Size(68, 40);
             this.btnAsk.TabIndex = 18;
             this.btnAsk.UseVisualStyleBackColor = false;
             // 
@@ -294,9 +315,10 @@ namespace WhoWantsToBeAMillionaire
             this.btnPhone.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPhone.BackgroundImage")));
             this.btnPhone.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnPhone.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPhone.Location = new System.Drawing.Point(900, 12);
+            this.btnPhone.Location = new System.Drawing.Point(600, 8);
+            this.btnPhone.Margin = new System.Windows.Forms.Padding(2);
             this.btnPhone.Name = "btnPhone";
-            this.btnPhone.Size = new System.Drawing.Size(102, 62);
+            this.btnPhone.Size = new System.Drawing.Size(68, 40);
             this.btnPhone.TabIndex = 19;
             this.btnPhone.UseVisualStyleBackColor = false;
             // 
@@ -306,9 +328,10 @@ namespace WhoWantsToBeAMillionaire
             this.btn5050.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn5050.BackgroundImage")));
             this.btn5050.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn5050.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn5050.Location = new System.Drawing.Point(1008, 12);
+            this.btn5050.Location = new System.Drawing.Point(672, 8);
+            this.btn5050.Margin = new System.Windows.Forms.Padding(2);
             this.btn5050.Name = "btn5050";
-            this.btn5050.Size = new System.Drawing.Size(102, 62);
+            this.btn5050.Size = new System.Drawing.Size(68, 40);
             this.btn5050.TabIndex = 20;
             this.btn5050.UseVisualStyleBackColor = false;
             this.btn5050.Click += new System.EventHandler(this.btn5050_Click);
@@ -318,9 +341,10 @@ namespace WhoWantsToBeAMillionaire
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(-2, 368);
+            this.pictureBox1.Location = new System.Drawing.Point(-1, 239);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(768, 289);
+            this.pictureBox1.Size = new System.Drawing.Size(512, 188);
             this.pictureBox1.TabIndex = 22;
             this.pictureBox1.TabStop = false;
             // 
@@ -333,9 +357,10 @@ namespace WhoWantsToBeAMillionaire
             this.btnAns3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAns3.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAns3.ForeColor = System.Drawing.Color.Transparent;
-            this.btnAns3.Location = new System.Drawing.Point(40, 595);
+            this.btnAns3.Location = new System.Drawing.Point(27, 387);
+            this.btnAns3.Margin = new System.Windows.Forms.Padding(2);
             this.btnAns3.Name = "btnAns3";
-            this.btnAns3.Size = new System.Drawing.Size(315, 46);
+            this.btnAns3.Size = new System.Drawing.Size(210, 30);
             this.btnAns3.TabIndex = 23;
             this.btnAns3.UseVisualStyleBackColor = false;
             this.btnAns3.MouseClick += new System.Windows.Forms.MouseEventHandler(this.AnsButtonClicked);
@@ -347,11 +372,11 @@ namespace WhoWantsToBeAMillionaire
             this.lblQst.BackColor = System.Drawing.Color.MidnightBlue;
             this.lblQst.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblQst.ForeColor = System.Drawing.Color.White;
-            this.lblQst.Location = new System.Drawing.Point(75, 402);
+            this.lblQst.Location = new System.Drawing.Point(50, 261);
             this.lblQst.Margin = new System.Windows.Forms.Padding(0);
-            this.lblQst.MaximumSize = new System.Drawing.Size(626, 0);
+            this.lblQst.MaximumSize = new System.Drawing.Size(417, 0);
             this.lblQst.Name = "lblQst";
-            this.lblQst.Size = new System.Drawing.Size(0, 43);
+            this.lblQst.Size = new System.Drawing.Size(0, 29);
             this.lblQst.TabIndex = 24;
             this.lblQst.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
@@ -364,9 +389,10 @@ namespace WhoWantsToBeAMillionaire
             this.btnAns4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAns4.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAns4.ForeColor = System.Drawing.Color.Transparent;
-            this.btnAns4.Location = new System.Drawing.Point(410, 595);
+            this.btnAns4.Location = new System.Drawing.Point(273, 387);
+            this.btnAns4.Margin = new System.Windows.Forms.Padding(2);
             this.btnAns4.Name = "btnAns4";
-            this.btnAns4.Size = new System.Drawing.Size(315, 46);
+            this.btnAns4.Size = new System.Drawing.Size(210, 30);
             this.btnAns4.TabIndex = 25;
             this.btnAns4.UseVisualStyleBackColor = false;
             this.btnAns4.MouseClick += new System.Windows.Forms.MouseEventHandler(this.AnsButtonClicked);
@@ -380,9 +406,10 @@ namespace WhoWantsToBeAMillionaire
             this.btnAns2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAns2.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAns2.ForeColor = System.Drawing.Color.Transparent;
-            this.btnAns2.Location = new System.Drawing.Point(410, 515);
+            this.btnAns2.Location = new System.Drawing.Point(273, 335);
+            this.btnAns2.Margin = new System.Windows.Forms.Padding(2);
             this.btnAns2.Name = "btnAns2";
-            this.btnAns2.Size = new System.Drawing.Size(315, 46);
+            this.btnAns2.Size = new System.Drawing.Size(210, 30);
             this.btnAns2.TabIndex = 26;
             this.btnAns2.UseVisualStyleBackColor = false;
             this.btnAns2.MouseClick += new System.Windows.Forms.MouseEventHandler(this.AnsButtonClicked);
@@ -396,25 +423,46 @@ namespace WhoWantsToBeAMillionaire
             this.btnAns1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAns1.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAns1.ForeColor = System.Drawing.Color.Transparent;
-            this.btnAns1.Location = new System.Drawing.Point(40, 515);
+            this.btnAns1.Location = new System.Drawing.Point(27, 335);
+            this.btnAns1.Margin = new System.Windows.Forms.Padding(2);
             this.btnAns1.Name = "btnAns1";
-            this.btnAns1.Size = new System.Drawing.Size(315, 46);
+            this.btnAns1.Size = new System.Drawing.Size(210, 30);
             this.btnAns1.TabIndex = 27;
             this.btnAns1.UseVisualStyleBackColor = false;
             this.btnAns1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.AnsButtonClicked);
             // 
-            // timerSounds
+            // timerWin
             // 
-            this.timerSounds.Interval = 1000;
+            this.timerWin.Interval = 250;
+            this.timerWin.Tick += new System.EventHandler(this.timerWin_Tick);
+            // 
+            // lblWin
+            // 
+            this.lblWin.BackColor = System.Drawing.Color.MidnightBlue;
+            this.lblWin.Font = new System.Drawing.Font("Myanmar Text", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWin.ForeColor = System.Drawing.Color.Gold;
+            this.lblWin.Location = new System.Drawing.Point(27, 111);
+            this.lblWin.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblWin.Name = "lblWin";
+            this.lblWin.Size = new System.Drawing.Size(456, 86);
+            this.lblWin.TabIndex = 28;
+            this.lblWin.Text = "WE\'VE GOT A MILLIONAIRE!";
+            this.lblWin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblWin.Visible = false;
+            // 
+            // timerLabels
+            // 
+            this.timerLabels.Tick += new System.EventHandler(this.timerLabels_Tick);
             // 
             // WWTBAM
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Navy;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1120, 655);
+            this.ClientSize = new System.Drawing.Size(747, 426);
+            this.Controls.Add(this.lblWin);
             this.Controls.Add(this.btnAns1);
             this.Controls.Add(this.btnAns2);
             this.Controls.Add(this.btnAns4);
@@ -444,6 +492,7 @@ namespace WhoWantsToBeAMillionaire
             this.Controls.Add(this.pictureBox1);
             this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "WWTBAM";
             this.Text = "Who Wants to be a Millionaire";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -484,7 +533,9 @@ namespace WhoWantsToBeAMillionaire
         private System.Windows.Forms.Button btnAns4;
         private System.Windows.Forms.Button btnAns2;
         private System.Windows.Forms.Button btnAns1;
-        private System.Windows.Forms.Timer timerSounds;
+        private System.Windows.Forms.Timer timerWin;
+        public System.Windows.Forms.Label lblWin;
+        private System.Windows.Forms.Timer timerLabels;
     }
 }
 
