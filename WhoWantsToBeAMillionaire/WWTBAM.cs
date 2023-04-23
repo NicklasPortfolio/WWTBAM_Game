@@ -2,10 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
-using System.Linq;
 using System.Media;
-using System.Threading.Tasks;
-using System.Timers;
 using System.Windows.Forms;
 using System.Xml.Serialization;
 using Question = WhoWantsToBeAMillionaire.XMLEditor.Question;
