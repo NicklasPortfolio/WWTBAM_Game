@@ -20,7 +20,7 @@ namespace WhoWantsToBeAMillionaire
         private List<Label> labels;
         private List<int> usedQuestions = new List<int>();
       
-        private int questionCounter = 14;
+        private int questionCounter = 1;
         private int secondsCounter = 0;
         private int animCounter = 0;
         private int colorSwitch = 0;
