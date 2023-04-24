@@ -11,20 +11,26 @@ namespace WhoWantsToBeAMillionaire
 {
     public partial class WWTBAM : Form
     {
+        // random
         Random rand = new Random();
 
+        // listor
         private List<Button> buttons;
         private List<Label> labels;
         private List<int> usedQuestions = new List<int>();
       
-        private int questionCounter = 1;
+        // ints
+        private int questionCounter = 14;
         private int secondsCounter = 0;
         private int animCounter = 0;
         private int colorSwitch = 0;
         private int iterator = 0;
 
+        // datum
         private string date = DateTime.Now.Date.ToShortDateString();
 
+
+        // Metoden GetItems, returnerar en instans av klassen Question utifrån den tillfrågade svårighetsgraden
         private Question GetItems(int requestedDifficulty)
         {
             XmlSerializer serializer = new XmlSerializer(typeof(List<Question>));
@@ -37,6 +43,7 @@ namespace WhoWantsToBeAMillionaire
 
             List<Question> questions = items.FindAll(item => item.difficulty == requestedDifficulty);
 
+            // Ser till att metoden returnerar en fråga som inte har returnerats förrut.
             if (questions.Count > 0)
             {
                 int randomIndex;
@@ -51,16 +58,18 @@ namespace WhoWantsToBeAMillionaire
                 usedQuestions.Add(selectedQuestion.questionIndex);
                 return selectedQuestion;
             }
-            
-            return null;
+            return null; // All codepaths return a value
         }
 
+        // ChangeButtons ändrar texten på knapparna man svarar med samt den label som innehåller frågan.
         private void ChangeButtons(Question question)
         {
             lblQst.Text = question.questionText;
 
+            // Ett HashSet är som en lista, fast den kan inte innehålla dubletter av föremål.
             HashSet<int> generatedNumbers = new HashSet<int>(); 
 
+            // Ser till så att de olika svarsalternativen placeras ut på knapparna slumpmässigt.
             for (int i = 0; i < 4; i++)
             {
                 int randomNumber;
@@ -79,12 +88,14 @@ namespace WhoWantsToBeAMillionaire
             }
         }
 
+        // Flyttar pekaren till nästa label.
         private void NextLabel()
         {
             labels[questionCounter - 2].Text = labels[questionCounter - 2].Text.Trim(new char[] { '<' });
             labels[questionCounter - 1].Text += " <";
         }
 
+        // Gör det enklare att spela ljud och musik.
         private void PlayAudio(string fileName, bool loop)
         {
             SoundPlayer audio = new SoundPlayer(fileName);
@@ -102,6 +113,7 @@ namespace WhoWantsToBeAMillionaire
         {
             InitializeComponent();
 
+            // Det är lättare att hantera många objekt som ett stort objekt genom listor.
             buttons = new List<Button>
             {
                 btnAns1,
@@ -132,12 +144,13 @@ namespace WhoWantsToBeAMillionaire
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            XMLEditor program = new XMLEditor();
-            program.SetItems();
-            ChangeButtons(GetItems(1));
+            XMLEditor program = new XMLEditor(); // Init XMLEditor klassen
+            program.SetItems(); // Init SetItems metoden i XMLEditor.
+            ChangeButtons(GetItems(1)); // Generera den första frågan.
             PlayAudio(@"Audio\To1000.wav", true);
         }
 
+        // Hanterar knapptryck
         private void AnsButtonClicked(object sender, MouseEventArgs e)
         {
             Button button = sender as Button;
@@ -149,7 +162,8 @@ namespace WhoWantsToBeAMillionaire
             PlayAudio(@"Audio\FinalAnswer.wav", false);
             System.Threading.Thread.Sleep(4000);
 
-            if ((string)button.Tag == "correct")
+            // Typ hela den här tolkar bara vad som händer beroende på vilken fråga man är.
+            if (button.Tag as string == "correct")
             {
                 button.BackColor = Color.ForestGreen;
                 button.Update();
@@ -158,19 +172,19 @@ namespace WhoWantsToBeAMillionaire
                 {
                     PlayAudio(@"Audio\Correct.wav", false);
                     System.Threading.Thread.Sleep(4000);
-
                     questionCounter++;
-                    if (questionCounter < 5)
+
+                    if (questionCounter < 5) // Lätt
                     {
                         question = GetItems(1);
                         PlayAudio(@"Audio\To1000.wav", true);
                     }
-                    else if (questionCounter > 4 && questionCounter < 10)
+                    else if (questionCounter > 4 && questionCounter < 10) // Medium
                     {
                         question = GetItems(2);
                         PlayAudio(@"Audio\To32000.wav", true);
                     }
-                    else
+                    else // Svår
                     {
                         question = GetItems(3);
                         PlayAudio(@"Audio\To1M.wav", true);
@@ -181,7 +195,7 @@ namespace WhoWantsToBeAMillionaire
                     NextLabel();
                 }
 
-                else
+                else // Om man vinner
                 {
                     lblQst.Text = null;
                     lblWin.Visible = true;
@@ -203,7 +217,7 @@ namespace WhoWantsToBeAMillionaire
                 }
             }
 
-            else
+            else // Om man förlorar
             {
                 button.BackColor = Color.Firebrick;
                 button.Update();
@@ -223,6 +237,8 @@ namespace WhoWantsToBeAMillionaire
                 buttonObject.Enabled = true;
             }
         }
+
+        // Hanterar 50/50 livlinan
         private void btn5050_Click(object sender, EventArgs e)
         {
             List<Button> tobeDisabled = new List<Button>();
@@ -251,15 +267,17 @@ namespace WhoWantsToBeAMillionaire
             btn5050.BackgroundImage = null;
         }
 
+        // Hanterar timern i hörnet
         private void timerTime_Tick(object sender, EventArgs e)
         {
             secondsCounter++;
             lblDate.Text = $"{date} | {secondsCounter} seconds";
         }
 
+        // Win animationen
         private void timerWin_Tick(object sender, EventArgs e)
         {
-            if (animCounter < 68)
+            if (animCounter < 68) // Använder ternary switch för rolig (statement ? om true : om false)
             {
                 lblWin.ForeColor = (colorSwitch == 0) ? Color.White : Color.Gold;
                 buttons[0].BackColor = (colorSwitch == 0) ? Color.Gold : Color.White;
@@ -289,6 +307,8 @@ namespace WhoWantsToBeAMillionaire
 
         Color[] colors = { Color.Gold, Color.ForestGreen };
         int colorIndex = 0;
+
+        // Labels animationen
         private void timerLabels_Tick(object sender, EventArgs e)
         {
             for (int i = 0; i < labels.Count; i++)

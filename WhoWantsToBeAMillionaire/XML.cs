@@ -6,6 +6,7 @@ namespace WhoWantsToBeAMillionaire
 {
     public class XMLEditor
     {
+        // Klassen Question gör det enkelt för mig att spara frågorna på ett strukturerat sätt.
         public class Question
         {
             public int questionIndex { get; set; }
@@ -16,13 +17,14 @@ namespace WhoWantsToBeAMillionaire
         }
 
         /* 
-                    questionIndex = #,
-                    questionText = "Question",
-                    options = new List<string> { "Answer1", "Answer2", "Answer3", "Answer4" },
-                    difficulty = #,
-                    correctIndex = #  
+            questionIndex = #,
+            questionText = "Question",
+            options = new List<string> { "Answer1", "Answer2", "Answer3", "Answer4" },
+            difficulty = #,
+            correctIndex = #  
         */
 
+        // Lägger alla frågor nedan i en XML fil för enkel storage. Haters gonna hate.
         public void SetItems()
         {
             List<Question> questionsList = new List<Question>
